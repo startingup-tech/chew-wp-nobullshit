@@ -6,6 +6,9 @@ use ChewWpNoBullshit\AbstractChewRecipe;
 
 class ObscureLoginFailRecipe extends AbstractChewRecipe
 {
+    /**
+     * @return void
+     */
     public function apply()
     {
         add_filter('login_errors', function () {

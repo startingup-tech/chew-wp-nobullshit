@@ -1,16 +1,14 @@
 <?php
 
-
 namespace ChewWpNoBullshit\Recipe\Security;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
-/**
- * Class DisableAuthorScansRecipe
- * @package ChewWpNoBullshit\Recipe
- */
 class DisableAuthorScansRecipe extends AbstractChewRecipe
 {
+    /**
+     * @return void
+     */
     public function apply()
     {
         add_action('template_redirect', function() {
@@ -52,6 +50,9 @@ class DisableAuthorScansRecipe extends AbstractChewRecipe
         });
     }
 
+    /**
+     * @return void
+     */
     private function send404() {
         global $wp_query;
         $wp_query = new \WP_Query();

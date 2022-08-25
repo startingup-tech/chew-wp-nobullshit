@@ -2,7 +2,6 @@
 
 namespace ChewWpNoBullshit\Recipe\CleanFront;
 
-use Chew\Recipes\CleanFront\CleanArchiveTitleRecipe;
 use ChewWpNoBullshit\ChewRecipeCollection;
 
 class CleanFrontRecipeCollection extends ChewRecipeCollection
@@ -19,6 +18,8 @@ class CleanFrontRecipeCollection extends ChewRecipeCollection
             new RemoveGeneratorRecipe(),
             new RemoveWpGlobalStylesRecipe(),
             new CleanArchiveTitleRecipe(),
+            new CleanWPHeadRecipe(),
+            new RemoveEmojiRecipe()
         ]);
     }
 }

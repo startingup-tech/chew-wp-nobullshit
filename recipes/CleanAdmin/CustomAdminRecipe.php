@@ -1,13 +1,9 @@
 <?php
 
-namespace ChewWpNoBullshit\Recipe;
+namespace ChewWpNoBullshit\Recipe\CleanAdmin;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
-/**
- * Class RemoveWpGlobalStyles
- * @package ChewWpNoBullshit\Recipe
- */
 class CustomAdminRecipe extends AbstractChewRecipe
 {
     const THEME_NAME = 'chew-custom';
@@ -21,6 +17,9 @@ class CustomAdminRecipe extends AbstractChewRecipe
         $this->customColors = $options['customColors'];
     }
 
+    /**
+     * @return void
+     */
     public function apply()
     {
         add_action('admin_init', function() {
@@ -42,7 +41,6 @@ class CustomAdminRecipe extends AbstractChewRecipe
         add_filter('get_user_option_admin_color', function($result, $option, $user) {
             return self::THEME_NAME;
         }, 10, 3);
-
     }
 }
 

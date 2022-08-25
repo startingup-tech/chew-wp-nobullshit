@@ -24,7 +24,7 @@ class RemoveWpGlobalStylesRecipe extends AbstractChewRecipe
     }
 
     /**
-     *
+     * @return void
      */
     public function apply()
     {

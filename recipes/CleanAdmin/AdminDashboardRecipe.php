@@ -1,18 +1,17 @@
 <?php
 
-namespace ChewWpNoBullshit\Recipe;
+namespace ChewWpNoBullshit\Recipe\CleanAdmin;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
-/**
- * Class RemoveWpGlobalStyles
- * @package ChewWpNoBullshit\Recipe
- */
 class AdminDashboardRecipe extends AbstractChewRecipe
 {
+    /**
+     * @return void
+     */
     public function apply()
     {
-        add_action('wp_dashboard_setup', function () {
+        add_action('wp_dashboard_setup', function() {
             global $wp_meta_boxes;
             $positions = [
                 'dashboard_activity' => 'normal',

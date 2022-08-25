@@ -10,23 +10,23 @@ use ChewWpNoBullshit\AbstractChewRecipe;
  */
 class RemoveEmojiRecipe extends AbstractChewRecipe
 {
-	/**
-	 * @var string
-	 */
-	public $slug = 'remove-emoji';
+    /**
+     * @var string
+     */
+    public $slug = 'remove-emoji';
 
-	/**
-	 * @return string|void
-	 */
-	public function getDescription(): string
-	{
-		return __('Removes the admin mention "Thank you for using WordPress"', 'chew-wp-no-bullshit');
-	}
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return __('Removes the admin mention "Thank you for using WordPress"', 'chew-wp-no-bullshit');
+    }
 
-	/**
-	 *
-	 */
-	public function apply()
+    /**
+     * @return void
+     */
+    public function apply()
     {
         remove_action('wp_head', 'print_emoji_detection_script', 7);
         add_action('after_setup_theme', function () {

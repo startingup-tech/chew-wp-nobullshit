@@ -2,10 +2,6 @@
 
 namespace ChewWpNoBullshit;
 
-/**
- * Class AbstractChewRecipe
- * @package ChewWpNoBullshit
- */
 class ChewRecipeCollection extends AbstractChewRecipe
 {
     /**

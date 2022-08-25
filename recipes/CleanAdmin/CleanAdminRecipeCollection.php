@@ -3,10 +3,6 @@
 namespace ChewWpNoBullshit\Recipe\CleanAdmin;
 
 use ChewWpNoBullshit\ChewRecipeCollection;
-use ChewWpNoBullshit\Recipe\AdminBarRecipe;
-use ChewWpNoBullshit\Recipe\AdminDashboardRecipe;
-use ChewWpNoBullshit\Recipe\AdminHelpTabsRecipe;
-use ChewWpNoBullshit\Recipe\CustomAdminRecipe;
 
 class CleanAdminRecipeCollection extends ChewRecipeCollection
 {
@@ -18,7 +14,6 @@ class CleanAdminRecipeCollection extends ChewRecipeCollection
     public function __construct(array $options = [])
     {
         parent::__construct([
-            new AdminBarRecipe(),
             new AdminDashboardRecipe(),
             new AdminFooterTextRecipe(),
             new AdminHelpTabsRecipe(),
@@ -34,6 +29,6 @@ class CleanAdminRecipeCollection extends ChewRecipeCollection
      */
     public function shouldApply(): bool
     {
-        return \is_admin() || \is_user_logged_in();
+        return \is_admin();
     }
 }

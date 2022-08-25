@@ -4,12 +4,11 @@ namespace ChewWpNoBullshit\Recipe;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
-/**
- * Class RemoveWpGlobalStyles
- * @package ChewWpNoBullshit\Recipe
- */
 class RemoveWPOembedRecipe extends AbstractChewRecipe
 {
+    /**
+     * @return void
+     */
     public function apply()
     {
         add_action('wp_enqueue_scripts', function() {

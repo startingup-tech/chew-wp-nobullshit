@@ -6,6 +6,9 @@ use ChewWpNoBullshit\AbstractChewRecipe;
 
 class EnsureDisallowFileEditRecipe extends AbstractChewRecipe
 {
+    /**
+     * @return void
+     */
     public function apply()
     {
         add_action('admin_init', function () {

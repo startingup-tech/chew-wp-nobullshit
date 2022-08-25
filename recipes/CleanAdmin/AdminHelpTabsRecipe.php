@@ -1,13 +1,9 @@
 <?php
 
-namespace ChewWpNoBullshit\Recipe;
+namespace ChewWpNoBullshit\Recipe\CleanAdmin;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
-/**
- * Class RemoveWpGlobalStyles
- * @package ChewWpNoBullshit\Recipe
- */
 class AdminHelpTabsRecipe extends AbstractChewRecipe
 {
     public function apply()
@@ -18,7 +14,5 @@ class AdminHelpTabsRecipe extends AbstractChewRecipe
             }
             \get_current_screen()->remove_help_tabs();
         }, 999);
-
     }
 }
-

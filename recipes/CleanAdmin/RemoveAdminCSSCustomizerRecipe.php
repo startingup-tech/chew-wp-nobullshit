@@ -6,6 +6,9 @@ use ChewWpNoBullshit\AbstractChewRecipe;
 
 class RemoveAdminCSSCustomizerRecipe extends AbstractChewRecipe
 {
+    /**
+     * @return void
+     */
     public function apply()
     {
         add_action('customize_register', function ($wp_customize) {

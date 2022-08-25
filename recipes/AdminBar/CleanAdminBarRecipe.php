@@ -1,15 +1,14 @@
 <?php
 
-namespace ChewWpNoBullshit\Recipe;
+namespace ChewWpNoBullshit\Recipe\AdminBar;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
-/**
- * Class RemoveWpGlobalStyles
- * @package ChewWpNoBullshit\Recipe
- */
-class AdminBarRecipe extends AbstractChewRecipe
+class CleanAdminBarRecipe extends AbstractChewRecipe
 {
+    /**
+     * @return void
+     */
     public function apply()
     {
         add_action('admin_bar_menu', function ($menu) {
