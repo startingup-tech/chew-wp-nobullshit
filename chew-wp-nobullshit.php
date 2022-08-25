@@ -5,12 +5,14 @@ Plugin Name: Chew WP No Bullshit
 Plugin URI: https://www.startingup.fr/chew-wp-no-bullshit
 Github Plugin URI: https://github.com/startingup-tech/chew-wp-nobullshit
 Description: Optimizes WordPress installations by removing useless stuff.
-Version: 1.0.3
+Version: 1.0.4
 Author: Geoffrey Stein
 Author URI: https://www.geoffrey-stein.fr
 Text Domain: clean bullshit fresh
 Domain Path: /lang
 */
+
+defined('ABSPATH') or die('Cheatin\' uh?');
 
 $pluginDir = plugin_dir_path(__FILE__);
 

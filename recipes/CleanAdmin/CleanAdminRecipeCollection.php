@@ -25,6 +25,7 @@ class CleanAdminRecipeCollection extends ChewRecipeCollection
             new CustomAdminRecipe([
                 'customColors' => $options['customColors'],
             ]),
+            new RemoveAdminCSSCustomizerRecipe(),
         ]);
     }
 

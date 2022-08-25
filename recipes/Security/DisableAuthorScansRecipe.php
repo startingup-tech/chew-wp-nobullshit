@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ChewWpNoBullshit\Recipe;
+namespace ChewWpNoBullshit\Recipe\Security;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
