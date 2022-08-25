@@ -38,14 +38,16 @@ class ChewRecipeCollection extends AbstractChewRecipe
      * @return void
      */
     public function apply() {
+        if (!$this->shouldApply()) {
+            return;
+        }
+
         foreach ($this->recipeCollection as $recipe) {
             if (!$recipe instanceof ChewRecipeInterface) {
                 continue;
             }
 
-            if ($this->shouldApply()) {
-                $recipe->apply();
-            }
+            $recipe->apply();
         }
     }
 }

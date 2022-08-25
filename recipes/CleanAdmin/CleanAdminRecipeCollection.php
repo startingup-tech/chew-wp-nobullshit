@@ -33,6 +33,6 @@ class CleanAdminRecipeCollection extends ChewRecipeCollection
      */
     public function shouldApply(): bool
     {
-        return is_admin() || is_user_logged_in();
+        return \is_admin() || \is_user_logged_in();
     }
 }

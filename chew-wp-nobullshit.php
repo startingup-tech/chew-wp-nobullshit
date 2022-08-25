@@ -5,7 +5,7 @@ Plugin Name: Chew WP No Bullshit
 Plugin URI: https://www.startingup.fr/chew-wp-no-bullshit
 Github Plugin URI: https://github.com/startingup-tech/chew-wp-nobullshit
 Description: Optimizes WordPress installations by removing useless stuff.
-Version: 1.0.2
+Version: 1.0.3
 Author: Geoffrey Stein
 Author URI: https://www.geoffrey-stein.fr
 Text Domain: clean bullshit fresh
@@ -39,20 +39,23 @@ foreach (array_merge(
 	require_once($recipeFile);
 }
 
-$listRecipes = apply_filters('noBullshit/listRecipes', []);
-foreach ($listRecipes as $recipe) {
-    if (!$recipe instanceof \ChewWpNoBullshit\ChewRecipeInterface) {
-        continue;
-    }
+add_action('init', function() {
+    $listRecipes = apply_filters('noBullshit/listRecipes', []);
+    foreach ($listRecipes as $recipe) {
+        if (!$recipe instanceof \ChewWpNoBullshit\ChewRecipeInterface) {
+            continue;
+        }
 
-    $recipeSlug = $recipe->getSlug();
-    if (!apply_filters("noBullshit/recipe/${recipeSlug}", true)) {
-        continue;
-    }
+        $recipeSlug = $recipe->getSlug();
+        if (!apply_filters("noBullshit/recipe/${recipeSlug}", true)) {
+            continue;
+        }
 
-    try {
-        $recipe->apply();
-    } catch (\Throwable $e) {
-        error_log("Chew WP No Bullshit: Error while applying recipe ${recipeSlug}: " . $e->getMessage());
+        try {
+            $recipe->apply();
+        } catch (\Throwable $e) {
+            die("Chew WP No Bullshit: Error while applying recipe ${recipeSlug}: " . $e->getMessage());
+        }
     }
-}
+}, -PHP_INT_MAX);
+
