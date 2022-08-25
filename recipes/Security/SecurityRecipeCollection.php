@@ -1,6 +1,6 @@
 <?php
 
-namespace ChewWpNoBullshit\Recipe\CleanFront;
+namespace ChewWpNoBullshit\Recipe\Security;
 
 use ChewWpNoBullshit\ChewRecipeCollection;
 use ChewWpNoBullshit\Recipe\Security\DisableAuthorScansRecipe;
