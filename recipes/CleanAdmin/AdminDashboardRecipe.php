@@ -8,7 +8,7 @@ use ChewWpNoBullshit\AbstractChewRecipe;
  * Class RemoveWpGlobalStyles
  * @package ChewWpNoBullshit\Recipe
  */
-class CleanAdminRecipe extends AbstractChewRecipe
+class AdminDashboardRecipe extends AbstractChewRecipe
 {
     public function apply()
     {
@@ -30,22 +30,6 @@ class CleanAdminRecipe extends AbstractChewRecipe
                 unset($wp_meta_boxes['dashboard'][$position]['core'][$box]);
             }
         });
-
-        add_action('admin_bar_menu', function ($menu) {
-            $items = [
-                'comments',
-                'wp-logo',
-                'customize',
-                'appearance',
-                'new-content',
-                'updates',
-                'search',
-            ];
-
-            foreach ($items as $item) {
-                $menu->remove_node($item);
-            }
-        }, 999);
     }
 }
 

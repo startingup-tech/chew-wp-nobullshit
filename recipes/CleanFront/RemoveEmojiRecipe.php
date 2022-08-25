@@ -1,6 +1,6 @@
 <?php
 
-namespace ChewWpNoBullshit\Recipe;
+namespace ChewWpNoBullshit\Recipe\CleanFront;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 
@@ -8,12 +8,12 @@ use ChewWpNoBullshit\AbstractChewRecipe;
  * Class RemoveGeneratorRecipe
  * @package ChewWpNoBullshit\Recipe
  */
-class AdminFooterTextRecipe extends AbstractChewRecipe
+class RemoveEmojiRecipe extends AbstractChewRecipe
 {
 	/**
 	 * @var string
 	 */
-	public $slug = 'admin-footer-text';
+	public $slug = 'remove-emoji';
 
 	/**
 	 * @return string|void
@@ -27,9 +27,11 @@ class AdminFooterTextRecipe extends AbstractChewRecipe
 	 *
 	 */
 	public function apply()
-	{
-		add_filter('admin_footer_text', function() {
-			return '';
-		});
-	}
+    {
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        add_action('after_setup_theme', function () {
+            remove_action('wp_print_styles', 'print_emoji_styles');
+        });
+    }
 }
+

@@ -1,6 +1,6 @@
 <?php
 
-namespace ChewWpNoBullshit\Recipe;
+namespace ChewWpNoBullshit\Recipe\CleanFront;
 
 use ChewWpNoBullshit\AbstractChewRecipe;
 

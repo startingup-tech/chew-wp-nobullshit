@@ -17,8 +17,8 @@ class CustomAdminRecipe extends AbstractChewRecipe
      */
     private $customColors;
 
-    public function __construct($customColors = ['#222']) {
-        $this->customColors = $customColors;
+    public function __construct($options = ['customColors' => '#222']) {
+        $this->customColors = $options['customColors'];
     }
 
     public function apply()
