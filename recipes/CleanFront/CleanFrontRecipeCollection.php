@@ -12,7 +12,7 @@ class CleanFrontRecipeCollection extends ChewRecipeCollection
      */
     public $slug = 'clean-front';
 
-    public function __construct(array $listRecipes = [])
+    public function __construct()
     {
         parent::__construct([
             new RemoveEmojiRecipe(),

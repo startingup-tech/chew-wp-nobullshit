@@ -15,7 +15,7 @@ class CleanAdminRecipeCollection extends ChewRecipeCollection
      */
     public $slug = 'clean-admin';
 
-    public function __construct(array $listRecipes = [], array $options = [])
+    public function __construct(array $options = [])
     {
         parent::__construct([
             new AdminBarRecipe(),
