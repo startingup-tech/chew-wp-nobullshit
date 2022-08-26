@@ -13,13 +13,15 @@ Once the plugin installed and activated, add the following filter in your code :
 ```php
 add_filter('noBullshit/listRecipes', function(array $listRecipes = []) {
     $listRecipes = [
-        new Recipe\StuffRecipe(),
         new Recipe\RemoveWPOembedRecipe(),
         new Recipe\CleanAdmin\CleanAdminRecipeCollection([
             'customColors' => ['#222222', '#FFCA51'],
         ]),
         new Recipe\CleanFront\CleanFrontRecipeCollection(),
         new Recipe\Security\SecurityRecipeCollection(),
+        new Recipe\AdminBar\CleanAdminBarRecipe(),
+        new Recipe\AdminBar\BottomAdminBarRecipe(),
+        new Recipe\NoCategoryBaseRecipe(),
         ...
     ];
 
