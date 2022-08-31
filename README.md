@@ -72,6 +72,9 @@ Please make sure that your code is PSR-2 compliant. Yes, WP is not PSR-2 complia
 
 Please keep the plugin headless by don't creating a dashboard to manage the plugin. The purpose of this plugin is to remove crap to make WordPress lighter, not to add more crap with logos, notifications, ads and new bullshit.
 
+## Roadmap
+* Adding a recipe to completely remove comments functionalities
+
 ## Updater
 As this plugin is not hosted on WordPress.org but on GitHub, it uses the class ChewUpdater to perform updates.
 
