@@ -53,10 +53,8 @@ class DisableAuthorScansRecipe extends AbstractChewRecipe
     /**
      * @return void
      */
-    private function send404() {
-        global $wp_query;
-        $wp_query = new \WP_Query();
-        $wp_query->set_404();
-        status_header(404);
+    private function send404()
+    {
+        \ChewFramework::send404();
     }
 }
